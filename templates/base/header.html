@@ -1,21 +1,21 @@
-<nav class="navbar navbar-expand-md navbar-light "  >
+<nav class="navbar navbar-expand-md navbar-light ">
     <div class="container">
       {% if user.is_authenticated %}
       {% if user.is_teacher %}
       <a class="navbar-brand" href="{% url 'teacher' %}">
              {% load static %}
-             <img src="{% static 'others/logo.png' %}" class="logo"  alt="" >
+             <img src="{% static 'unesum.png' %}" class="logo"  alt="" >
     </a>
       {% elif user.is_student %}
       <a class="navbar-brand" href="{% url 'student' %}">
              
-        <img src="{% static 'others/logo.png' %}" class="logo"  alt="" >
+        <img src="{% static 'unesum.png' %}" class="logo"  alt="UNESUM" >
     </a>
     {% endif %}
       {% else %}
       <a class="navbar-brand" href="{% url 'index' %}">
              
-        <img src="{% static 'others/logo.png' %}" class="logo"  alt="" >
+        <img src="{% static 'unesum.png' %}" class="logo"  alt="UNESUM" >
     </a>
       
       {% endif %}
@@ -28,29 +28,29 @@
         <ul class="navbar-nav ml-auto">
                 {% if user.is_authenticated %}
                 {% if user.is_teacher %}
-                  <li class="nav-item"><a href="{% url 'teacher' %}" class="nav-link"><i class="fas fa-tachometer-alt"></i>  Dashboard</a></li>
+                  <li class="nav-item"><a href="{% url 'teacher' %}" class="nav-link"><i class="fas fa-tachometer-alt"></i>  Tablero</a></li>
                 {% else %}
-                  <li class="nav-item"><a href="{% url 'student' %}" class="nav-link"><i class="fas fa-tachometer-alt"></i>  Dashboard</a></li>
+                  <li class="nav-item"><a href="{% url 'student' %}" class="nav-link"><i class="fas fa-tachometer-alt"></i>  Tablero</a></li>
                 {% endif %}
                     <li class="nav-item dropdown">
                         <a href="" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-plus"></i></a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             {% if user.is_teacher %}
-                            <a class="dropdown-item" href="{% url 'create_class' %}">Create Class</a>
+                            <a class="dropdown-item" href="{% url 'create_class' %}">Crear Clase</a>
                             {% else %}
-                            <a class="dropdown-item" href="#"  data-toggle="modal" data-target="#joinClass">Join Class</a>
+                            <a class="dropdown-item" href="#"  data-toggle="modal" data-target="#joinClass">Unirse a Clase</a>
                             {% endif %}
                           </div>
                     </li>
                     <li class="nav-item">
-                        <a href="{% url 'logout' %}"  class="nav-link"> <i class="fas fa-power-off"></i> Logout</a>
+                        <a href="{% url 'logout' %}"  class="nav-link"> <i class="fas fa-power-off"></i> Cerrar sesión</a>
                     </li>
                 {% else %}
                     <li class="nav-item">
-                        <a class="nav-link btn btn-outline-success" href="{% url 'signup' %}"><i class="fas fa-user-plus"></i> Sign Up </a>
+                        <a class="nav-link btn btn-outline-success" href="{% url 'signup' %}"><i class="fas fa-user-plus"></i> Registrarse </a>
                     </li>&nbsp;
                     <li class="nav-item">
-                        <a class="nav-link btn btn-primary" href="{% url 'login' %}"> <i class="fas fa-sign-in-alt"></i> Login</a>
+                        <a class="nav-link btn btn-primary" href="{% url 'login' %}"> <i class="fas fa-sign-in-alt"></i> Iniciar sesión</a>
                     </li>
                 {% endif %}
             </ul>
@@ -64,8 +64,8 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalCenterTitle"> Paste The Code to join</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <h5 class="modal-title" id="exampleModalCenterTitle"> Pega el código para unirte</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
@@ -75,11 +75,11 @@
               {% csrf_token %}
                 <div class="form-group">
                   
-                  <input type="text" class="form-control" id="exampleInputEmail1" name='code' aria-describedby="emailHelp" placeholder="Enter the Code">
+                  <input type="text" class="form-control" id="exampleInputEmail1" name='code' aria-describedby="emailHelp" placeholder="Ingresa el código">
                   
                 </div>
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-primary">Join</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <button type="submit" class="btn btn-primary">Unirse</button>
               </form>
 
         </div>

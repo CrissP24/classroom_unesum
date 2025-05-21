@@ -25,7 +25,8 @@ SECRET_KEY = 'django-insecure-tl^+0x-51ke0(x85^no6!dl1hwvkm560ht=wro)36a-ik2k4h*
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
+
 
 
 # Application definition
@@ -156,3 +157,9 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 # Github : https://github.com/yeazin
 # linked In : https://www.linkedin.com/in/yeazin/
 # website : yeazin.github.io
+
+
+import os
+
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')

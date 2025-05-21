@@ -28,7 +28,7 @@
         <div class="container" >
             <a class="navbar-brand" href="{% url 'index' %}">
                  
-                <span>Zooming Cls</span>
+                <span>CLASSROOM UNESUM</span>
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -43,21 +43,21 @@
                             <a href="" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-plus"></i></a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 {% if user.is_teacher %}
-                                <a class="dropdown-item" href="#">Create Class</a>
+                                <a class="dropdown-item" href="#">Crear Clase</a>
                                 {% else %}
-                                <a class="dropdown-item" href="#"  data-toggle="modal" data-target="#joinClass">Join Class</a>
+                                <a class="dropdown-item" href="#"  data-toggle="modal" data-target="#joinClass">Unirse a la Clase</a>
                                 {% endif %}
                               </div>
                         </li>
                         <li class="nav-item">
-                            <a href="{% url 'logout' %}"  class="nav-link">Logout</a>
+                            <a href="{% url 'logout' %}"  class="nav-link">Cerrar Sesión</a>
                         </li>
                     {% else %}
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'signup' %}">Sign Up</a>
+                            <a class="nav-link" href="{% url 'signup' %}">Registrarse</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'login' %}">Login</a>
+                            <a class="nav-link" href="{% url 'login' %}">Iniciar Sesión</a>
                         </li>
                     {% endif %}
                 </ul>
@@ -72,7 +72,7 @@
         <div class="modal-dialog modal-dialog-centered" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalCenterTitle"> Paste The Code to join</h5>
+              <h5 class="modal-title" id="exampleModalCenterTitle"> Pega el código para unirte</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
@@ -82,11 +82,11 @@
                 <form action="{% url 'join' %}" method="POST">
                     <div class="form-group">
                       {% csrf_token %}
-                      <input type="text" class="form-control" id="exampleInputEmail1" name="code" aria-describedby="emailHelp" placeholder="Enter the Code">
+                      <input type="text" class="form-control" id="exampleInputEmail1" name="code" aria-describedby="emailHelp" placeholder="Ingresa el Código">
                       
                     </div>
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary">Join</button>
+                    <button type="submit" class="btn btn-primary">Unirse</button>
                   </form>
     
             </div>
@@ -115,15 +115,13 @@
     <div class="row">
 
   <div class="col-4">
-    <h5 style="color:rgb(49, 48, 48);">Zooming CLS</h5>
+    <h5 style="color:rgb(49, 48, 48);">CLASSROOM UNESUM</h5>
   </div>
-      <div class="col-5"> <p>Made by <strong> Md. Nazrul Islam Yeasin</strong> | Verson : <strong> 1.0.1</strong></p></div>
+      <div class="col-5"> <p>Hecho por:<strong> </strong> | Versión : <strong> 2.0</strong></p></div>
 
     
   
-    <div class="col-3">
-      <p> Source Code on Github  <a href="https://github.com/yeazin/Zooming-cls"><i class="fab fa-github"></i></a>  </p>
-    </div>
+   
     
 
 
